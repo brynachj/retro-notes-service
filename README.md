@@ -1,5 +1,10 @@
 # Retro notes Service
-This service exists to allow a client to interface with a database which maintains a list of retro actions.
+This service exists to allow a client to interface with a database (currently using an in memory DB which does not persist between sessions) which maintains a list of retro actions.
+
+## Running the Service
+
+To run the service as a Spring Boot app you simply run ```./gradlew bootRun```
+
 
 ## GET retro notes endpoint
 ```/api/notes```
