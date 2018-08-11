@@ -19,10 +19,10 @@ Allows the user to post a new note.
 Example:
 ```
 {
-   	"title":"title",
-   	"content":"content",
-   	"date":"2018-08-03T12:12:12+01:00"
-   }
+  "title":"title",
+  "content":"content",
+  "date":"2018-08-03T12:12:12+01:00"
+}
 ```
 
 ## GET consent endpoint
@@ -38,7 +38,7 @@ Allows the user to post a new version of the consent document.
 Example:
 ```
 {
-	"version":"3",
-	"content":"You hereby kinda promise to do everything agreed in the retro."
+  "version":"3",
+  "content":"You hereby kinda promise to do everything agreed in the retro."
 }
 ```
