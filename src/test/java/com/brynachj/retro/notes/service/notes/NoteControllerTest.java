@@ -3,9 +3,14 @@ package com.brynachj.retro.notes.service.notes;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
+import org.mockito.MockitoAnnotations;
+import org.mockito.junit.MockitoJUnitRunner;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
+import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import java.util.ArrayList;
@@ -19,19 +24,20 @@ import static org.mockito.Mockito.when;
  * Created by brynach on 11/08/2018.
  */
 @SpringBootTest
-@RunWith(SpringRunner.class)
+@RunWith(MockitoJUnitRunner.class)
 public class NoteControllerTest {
 
-    @Autowired
+    @InjectMocks
     NoteController controller;
 
-    @MockBean
+    @Mock
     NoteService noteService;
 
     List<Note> noteList;
 
     @Before
     public void setUp() {
+        MockitoAnnotations.initMocks(this);
         noteList = new ArrayList<>();
     }
 
@@ -48,8 +54,6 @@ public class NoteControllerTest {
 
         assertEquals(1, controller.getNotes().size());
     }
-
-
 
     @Test
     public void getNotesReturnsAListOfSizeTwoWhenTwoNotesAreReturnedFromService() {

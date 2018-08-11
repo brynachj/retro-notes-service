@@ -1,15 +1,28 @@
 package com.brynachj.retro.notes.service.notes;
 
+import org.springframework.data.annotation.Transient;
+import org.springframework.data.mongodb.core.mapping.Document;
+
 import java.util.Date;
 
 /**
  * Created by brynach on 11/08/2018.
  */
+@Document(collection = "notes")
 public class Note {
 
-    String title;
-    String content;
-    Date date;
+    private String id;
+    private String title;
+    private String content;
+    private Date date;
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
 
     public String getTitle() {
         return title;
@@ -33,5 +46,19 @@ public class Note {
 
     public void setDate(Date date) {
         this.date = date;
+    }
+
+    @Transient
+    public boolean missingANonIdField() {
+        return (title == null || content == null || date == null || title.isEmpty() || content.isEmpty());
+    }
+
+    @Override
+    public String toString() {
+        return "Note{" +
+                "title='" + title + '\'' +
+                ", content='" + content + '\'' +
+                ", date=" + date +
+                '}';
     }
 }
