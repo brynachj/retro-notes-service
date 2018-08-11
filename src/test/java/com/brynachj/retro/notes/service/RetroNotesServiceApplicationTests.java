@@ -1,4 +1,4 @@
-package com.brynachj.retronotesservice;
+package com.brynachj.retro.notes.service;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
