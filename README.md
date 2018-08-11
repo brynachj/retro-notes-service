@@ -3,7 +3,7 @@ This service exists to allow a client to interface with a database (currently us
 
 ## Running the Service
 
-To run the service as a Spring Boot app you simply run ```./gradlew bootRun```
+To run the service as a Spring-Boot app run ```./gradlew bootRun``` in the root directory.
 
 
 ## GET retro notes endpoint
