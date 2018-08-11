@@ -1,5 +1,5 @@
 # Retro notes Service
-This service exists to allow a client to interface with a database (currently using an in memory DB which does not persist between sessions) which maintains a list of retro actions.
+This service exists to allow a client to interface with a database (currently using an in memory DB which does not persist between runs of the service) which maintains a list of retro actions.
 
 ## Running the Service
 
