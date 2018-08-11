@@ -7,17 +7,15 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 import org.mockito.junit.MockitoJUnitRunner;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.boot.test.mock.mockito.MockBean;
-import org.springframework.test.context.ContextConfiguration;
-import org.springframework.test.context.junit4.SpringRunner;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
 import static org.junit.Assert.assertEquals;
+import static org.mockito.Mockito.times;
+import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
 /**
@@ -90,5 +88,13 @@ public class NoteControllerTest {
         when(noteService.getNotes()).thenReturn(noteList);
 
         assertEquals(noteList, controller.getNotes());
+    }
+
+    @Test
+    public void postNoteCallsNoteServiceAddNoteMethodWithTheNoteParameterPassedThrough() {
+        Note note = new Note();
+        controller.postNote(note);
+
+        verify(noteService, times(1)).addNote(note);
     }
 }

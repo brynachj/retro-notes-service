@@ -52,13 +52,13 @@ public class NoteServiceTest {
     }
 
     @Test
-    public void getNotesReturnsAnEmptyListOfNotesWhenNothingIsReturnedFromService() {
+    public void getNotesReturnsAnEmptyListOfNotesWhenNothingIsReturnedFromRepository() {
 
         assertEquals(Collections.emptyList(), service.getNotes());
     }
 
     @Test
-    public void getNotesReturnsAListOfSizeOneWhenASingleNoteIsReturnedFromService() {
+    public void getNotesReturnsAListOfSizeOneWhenASingleNoteIsReturnedFromRepository() {
         noteList.add(note);
         when(noteRepository.findAll()).thenReturn(noteList);
 
@@ -66,7 +66,7 @@ public class NoteServiceTest {
     }
 
     @Test
-    public void getNotesReturnsAListOfSizeTwoWhenTwoNotesAreReturnedFromService() {
+    public void getNotesReturnsAListOfSizeTwoWhenTwoNotesAreReturnedFromRepository() {
         noteList.add(note);
         noteList.add(new Note());
         when(noteRepository.findAll()).thenReturn(noteList);
@@ -83,7 +83,7 @@ public class NoteServiceTest {
     }
 
     @Test
-    public void getNotesReturnsTheSameNoteThatIsReturnedFromService() {
+    public void getNotesReturnsTheSameNoteThatIsReturnedFromRepository() {
         noteList.add(note);
         when(noteRepository.findAll()).thenReturn(noteList);
 
@@ -91,7 +91,7 @@ public class NoteServiceTest {
     }
 
     @Test
-    public void getNotesReturnsTheSameListOfNotesThatIsReturnedFromService() {
+    public void getNotesReturnsTheSameListOfNotesThatIsReturnedFromRepository() {
         Note note2 = new Note();
         noteList.add(note);
         noteList.add(note2);
@@ -111,5 +111,14 @@ public class NoteServiceTest {
     public void addNoteThrowsExceptionWhenItIsPassedNullToInsert() {
         exception.expect(IllegalArgumentException.class);
         service.addNote(null);
+    }
+
+    @Test
+    public void addNoteThrowsExceptionWhenItIsPassedANoteWithSomeKeyDataMissingToInsert() {
+        Note notewithMissingData = new Note();
+
+        exception.expect(IllegalArgumentException.class);
+
+        service.addNote(notewithMissingData);
     }
 }
