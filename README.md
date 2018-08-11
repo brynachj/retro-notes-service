@@ -5,6 +5,8 @@ This service exists to allow a client to interface with a database (currently us
 
 To run the service as a Spring-Boot app run ```./gradlew bootRun``` in the root directory.
 
+To fill the database with some example notes and consent documents cd into the ```scripts``` directory and run ```sh post-data.sh```.
+
 Then navigate to http://localhost:8080/api/notes to see the list of retro notes.
 
 
