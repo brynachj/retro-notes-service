@@ -1,6 +1,7 @@
 .gradle
 /build/
 !gradle/wrapper/gradle-wrapper.jar
+.DS_Store
 
 ### STS ###
 .apt_generated
@@ -27,3 +28,6 @@
 
 ### JS ###
 vue/node_modules
+vue/coverage
+vue-cli/vue-cli-experiment/node_modules
+
