@@ -1,5 +1,12 @@
 # Retro notes Service
-This service exists to allow a client to interface with a database (currently using an in memory DB which does not persist between runs of the service) which maintains a list of retro actions.
+This service exists to allow a client to interface with a database (currently using an in memory DB which does not persist between runs of the service) which maintains a list of retro actions. 
+Used primarily for explaining REST requests and as a basis for mock interviews.
+Interview scenarios include:
+ - Running the Spring Boot app and getting the candidate to create a front-end application which calls the GET and POST endpoints to display and submit notes.
+  - There is an example front-end application in the vue folder
+- Have the candidate extend the back-end application so that notes now have the concept of an 'author'.
+  - Some discussion points on this could include how to make the endpoints backwards-compatible (the handling of old notes which do not have an author), how the ```post-data``` script would need updating and modification to documentation (including this file).
+- Have the candidate create a new back-end application which implements the endpoints as outlined in the documentation below
 
 ## Running the Service
 
