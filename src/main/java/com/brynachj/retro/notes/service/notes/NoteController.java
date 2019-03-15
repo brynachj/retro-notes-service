@@ -5,12 +5,14 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.CrossOrigin;
 
 import java.util.List;
 
 /**
  * Created by brynach on 11/08/2018.
  */
+@CrossOrigin
 @RestController
 @RequestMapping("notes")
 public class NoteController {
